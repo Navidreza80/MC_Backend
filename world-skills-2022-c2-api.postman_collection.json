@@ -1,0 +1,1246 @@
+{
+	"info": {
+		"_postman_id": "67be9e7f-8516-4ee3-88b0-b51245fe044c",
+		"name": "world-skills-2022-c2-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39087272",
+		"_collection_link": "https://restless-station-419646-2.postman.co/workspace/My-Workspace~80e69a3a-10e7-4276-8a9a-a1722c05fd2f/collection/39087272-67be9e7f-8516-4ee3-88b0-b51245fe044c?action=share&source=collection_link&creator=39087272"
+	},
+	"item": [
+		{
+			"name": "/api/v1",
+			"item": [
+				{
+					"name": "/auth",
+					"item": [
+						{
+							"name": "POST /signup",
+							"item": [
+								{
+									"name": "valid request",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "default"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"username\": \"new-player\",\n    \"password\": \"asdf1234\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_BASE_URL}}/api/v1/auth/signup",
+											"host": [
+												"{{API_BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"auth",
+												"signup"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "existing username",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "default"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"username\": \"player1\",\n    \"password\": \"asdf1234\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_BASE_URL}}/api/v1/auth/signup",
+											"host": [
+												"{{API_BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"auth",
+												"signup"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "missing password",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "default"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"username\": \"new-player-2\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_BASE_URL}}/api/v1/auth/signup",
+											"host": [
+												"{{API_BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"auth",
+												"signup"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "missing username",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "default"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"password\": \"asdf1234\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_BASE_URL}}/api/v1/auth/signup",
+											"host": [
+												"{{API_BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"auth",
+												"signup"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "short values",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "default"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"username\": \"a\",\n    \"password\": \"a\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_BASE_URL}}/api/v1/auth/signup",
+											"host": [
+												"{{API_BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"auth",
+												"signup"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "POST /signin",
+							"item": [
+								{
+									"name": "platform user signin",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "default"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"username\": \"player1\",\n    \"password\": \"asdf1234\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_BASE_URL}}/api/v1/auth/signin",
+											"host": [
+												"{{API_BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"auth",
+												"signin"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "non-existing username",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "default"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"username\": \"i-dont-exist\",\n    \"password\": \"helloworld1!\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_BASE_URL}}/api/v1/auth/signin",
+											"host": [
+												"{{API_BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"auth",
+												"signin"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "wrong-password",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "default"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"username\": \"player1\",\n    \"password\": \"thisiswrong!\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_BASE_URL}}/api/v1/auth/signin",
+											"host": [
+												"{{API_BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"auth",
+												"signin"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "admin sign in",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"admin123\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_BASE_URL}}/api/v1/auth/signin-admin",
+											"host": [
+												"{{API_BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"auth",
+												"signin-admin"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "/games",
+					"item": [
+						{
+							"name": "GET /",
+							"item": [
+								{
+									"name": "default parameters",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "default"
+											}
+										],
+										"url": {
+											"raw": "{{API_BASE_URL}}/api/v1/games",
+											"host": [
+												"{{API_BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"games"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "first 2 games",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "default"
+											}
+										],
+										"url": {
+											"raw": "{{API_BASE_URL}}/api/v1/games?page=0&size=2",
+											"host": [
+												"{{API_BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"games"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "0"
+												},
+												{
+													"key": "size",
+													"value": "2"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "second 2 games",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "default"
+											}
+										],
+										"url": {
+											"raw": "{{API_BASE_URL}}/api/v1/games?page=1&size=2",
+											"host": [
+												"{{API_BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"games"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "1"
+												},
+												{
+													"key": "size",
+													"value": "2"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "sort by title asc",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "default"
+											}
+										],
+										"url": {
+											"raw": "{{API_BASE_URL}}/api/v1/games?sortBy=title&sortDir=asc",
+											"host": [
+												"{{API_BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"games"
+											],
+											"query": [
+												{
+													"key": "sortBy",
+													"value": "title"
+												},
+												{
+													"key": "sortDir",
+													"value": "asc"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "sort by title desc",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "default"
+											}
+										],
+										"url": {
+											"raw": "{{API_BASE_URL}}/api/v1/games?sortBy=title&sortDir=desc",
+											"host": [
+												"{{API_BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"games"
+											],
+											"query": [
+												{
+													"key": "sortBy",
+													"value": "title"
+												},
+												{
+													"key": "sortDir",
+													"value": "desc"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "POST /",
+							"item": [
+								{
+									"name": "valid request",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{Bearer Token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "default"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"title\": \"My New Game4\",\n    \"description\": \"This is my newest game, it is awesome\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_BASE_URL}}/api/v1/games",
+											"host": [
+												"{{API_BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"games"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "duplicate slug",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{Bearer Token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "default"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"title\": \"Demo Game 1\",\n    \"description\": \"This is my newest game, it is awesome\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_BASE_URL}}/api/v1/games",
+											"host": [
+												"{{API_BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"games"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "missing title",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{Bearer Token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "default"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"description\": \"This is my newest game, it is awesome\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_BASE_URL}}/api/v1/games",
+											"host": [
+												"{{API_BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"games"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "missing description",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{Bearer Token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "default"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"title\": \"My other new game\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_BASE_URL}}/api/v1/games",
+											"host": [
+												"{{API_BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"games"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "short title",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{Bearer Token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "default"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"title\": \"a\",\n    \"description\": \"a.\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_BASE_URL}}/api/v1/games",
+											"host": [
+												"{{API_BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"games"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "GET /:slug",
+							"item": [
+								{
+									"name": "demo-game-1",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "default"
+											}
+										],
+										"url": {
+											"raw": "{{API_BASE_URL}}/api/v1/games/mynewgame3",
+											"host": [
+												"{{API_BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"games",
+												"mynewgame3"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "demo-game-2",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "default"
+											}
+										],
+										"url": {
+											"raw": "{{API_BASE_URL}}/api/v1/games/mynewgame2",
+											"host": [
+												"{{API_BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"games",
+												"mynewgame2"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "/:slug",
+							"item": [
+								{
+									"name": "PUT /",
+									"item": [
+										{
+											"name": "update demo-game-1",
+											"request": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "default"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"title\": \"Demo Game 1 (updated)\",\n    \"description\": \"This is demo game 1 (updated)\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{API_BASE_URL}}/api/v1/games/mynewgame3",
+													"host": [
+														"{{API_BASE_URL}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"games",
+														"mynewgame3"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "update demo-game-1 title only",
+											"request": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "default"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"title\": \"Demo Game 1 (updated title only)\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{API_BASE_URL}}/api/v1/games/mynewgame3",
+													"host": [
+														"{{API_BASE_URL}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"games",
+														"mynewgame3"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "update demo-game-1 description only",
+											"request": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "default"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"description\": \"This is demo game 1 (updated description only)\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{API_BASE_URL}}/api/v1/games/mynewgame3",
+													"host": [
+														"{{API_BASE_URL}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"games",
+														"mynewgame3"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "DELETE /",
+									"item": [
+										{
+											"name": "delete demo-game-2",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{Bearer Token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "default"
+													}
+												],
+												"url": {
+													"raw": "{{API_BASE_URL}}/api/v1/games/mynewgame3",
+													"host": [
+														"{{API_BASE_URL}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"games",
+														"mynewgame3"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "GET /scores",
+									"item": [
+										{
+											"name": "demo-game-1",
+											"request": {
+												"auth": {
+													"type": "noauth"
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "default"
+													}
+												],
+												"url": {
+													"raw": "{{API_BASE_URL}}/api/v1/games/mynewgame2/scores",
+													"host": [
+														"{{API_BASE_URL}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"games",
+														"mynewgame2",
+														"scores"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "demo-game-2",
+											"request": {
+												"auth": {
+													"type": "noauth"
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "default"
+													}
+												],
+												"url": {
+													"raw": "{{API_BASE_URL}}/api/v1/games/demo-game-2/scores",
+													"host": [
+														"{{API_BASE_URL}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"games",
+														"demo-game-2",
+														"scores"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "POST /scores",
+									"item": [
+										{
+											"name": "demo-game-1",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{Bearer Token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "default"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"score\": \"1234\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{API_BASE_URL}}/api/v1/games/mynewgame2/scores",
+													"host": [
+														"{{API_BASE_URL}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"games",
+														"mynewgame2",
+														"scores"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "/users/:username",
+					"item": [
+						{
+							"name": "player1",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{API_BASE_URL}}/api/v1/users/player1",
+									"host": [
+										"{{API_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"player1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "/users",
+					"item": [
+						{
+							"name": "get all users",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Bearer Token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/users",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all admins",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Bearer Token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/users/admins",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"admins"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "API_BASE_URL",
+			"value": "http://webXX.wsc2022.se/module_c_solution",
+			"type": "default"
+		}
+	]
+}

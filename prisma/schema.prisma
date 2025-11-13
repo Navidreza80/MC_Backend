@@ -1,0 +1,50 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model PlatformUser {
+  username            String      @unique
+  password            String
+  registeredTimestamp DateTime    @default(now())
+  lastLoginTimestamp  DateTime    @default(now())
+  uploadedGames       Game[]
+  gameScores          GameScore[]
+  role                Role        @default(user)
+}
+
+model AdminUser {
+  username            String   @unique
+  password            String
+  registeredTimestamp DateTime @default(now())
+  lastLoginTimestamp  DateTime @default(now())
+}
+
+model GameScore {
+  user                 PlatformUser @relation(fields: [platformUserUsername], references: [username])
+  timestamp            DateTime     @unique @default(now())
+  score                String
+  platformUserUsername String
+  game                 Game         @relation(fields: [gameSlug], references: [slug])
+  gameSlug             String
+}
+
+model Game {
+  title             String       @unique
+  description       String
+  optionalThumbnail String?
+  slug              String       @unique
+  author            String
+  user              PlatformUser @relation(fields: [author], references: [username])
+  gameScores        GameScore[]
+}
+
+enum Role {
+  user
+  developer
+}
