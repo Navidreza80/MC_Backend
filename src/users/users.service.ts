@@ -15,6 +15,13 @@ export class UsersService {
         return this.prisma.platformUser.findMany()
     }
 
+    async getUserById(username) {
+        return this.prisma.platformUser.findUnique({
+            where: { username },
+            include: { uploadedGames: true, gameScores: true }
+        })
+    }
+
     async getAllAdmin(username) {
         const isAdmin = await this.prisma.adminUser.findUnique({
             where: { username }

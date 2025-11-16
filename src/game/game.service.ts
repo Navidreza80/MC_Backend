@@ -36,11 +36,20 @@ export class GameService {
         })
     }
 
+    async getAllDeveloperGames(username) {
+        return this.prisma.game.findMany({
+            where: {
+                author: username
+            }
+        })
+    }
+
     async getGameById(slug) {
         return this.prisma.game.findUnique({
             where: {
                 slug
-            }
+            },
+            include: { gameScores: true }
         })
     }
 

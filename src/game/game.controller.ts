@@ -21,6 +21,12 @@ export class GameController {
         return this.gameService.getAllGames({ size: +query.size, page: +query.page, sortDir: query.sortDir });
     }
 
+    @UseGuards(JwtAuthGuard)
+    @Get()
+    getAllDeveloperGames(@Req() req) {
+        return this.gameService.getAllDeveloperGames(req.user.username)
+    }
+
     @Get(':slug')
     getGameById(@Param() { slug }) {
         return this.gameService.getGameById(slug);
